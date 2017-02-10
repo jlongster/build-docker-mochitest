@@ -12,9 +12,6 @@ RUN wget -O bootstrap.py https://hg.mozilla.org/mozilla-central/raw-file/default
 # Firefox.
 # RUN echo "cache-bust1"
 
-RUN hg clone https://hg.mozilla.org/mozilla-central/ firefox
+ADD update-mc /
+RUN  /update-mc
 WORKDIR firefox
-
-RUN echo 'mk_add_options MOZ_MAKE_FLAGS="-s -j4"' > .mozconfig
-
-RUN SHELL=/bin/bash ./mach build

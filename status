@@ -1,0 +1,5 @@
+#!/bin/sh
+
+docker run -it \
+  jasonlaster11/mochitest-runner \
+  /bin/bash -c "export SHELL=/bin/bash; hg log -l 1"

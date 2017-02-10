@@ -1,5 +1,13 @@
-### Building a docker image for mochitests
+### update docker image
 
-Instructions:
+`make build`
 
-`make`
+### check the status
+
+`make status`
+
+### publish image
+
+First login with `docker login`, then run:
+
+`make publish`

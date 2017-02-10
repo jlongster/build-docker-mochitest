@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+if [ -d "firefox" ]; then
+    echo "Updating MC!"
+    hg pull
+    hg update -C
+else
+    echo "Cloning MC"
+    hg clone https://hg.mozilla.org/mozilla-central/ firefox
+    echo "
+        ac_add_options --enable-artifact-builds
+        mk_add_options MOZ_OBJDIR=./objdir-frontend
+    " > .mozconfig
+fi
